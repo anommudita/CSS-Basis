@@ -1,0 +1,217 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* start CSS */
+
+.container {
+
+    width: 800px;
+    margin: auto;
+    border: 5px solid black;
+    padding: 5px;
+
+
+}
+
+/* lebar harus sesuai dengan kontainer */
+.kiri {
+
+    width: 150px;
+    height: 500px;
+    background-color: salmon;
+    float: left;
+    box-sizing: border-box;
+}
+
+.tengah {
+
+    width: 500px;
+    height: 500px;
+    background-color: lightgreen;
+    float: left;
+}
+
+.kanan {
+    width: 150px;
+    height: 500px;
+    background-color: skyblue;
+    float: left;
+}
+
+
+.kotak {
+
+    width: 80px;
+    height: 80px;
+    color: white;
+    background-color: salmon;
+    text-align: center;
+    /* tulisan akan berada ditengah -tengah kotak dan juga sesuaikan dengan tinggi kotaknya */
+    line-height: 80px;
+    font-size: 30px;
+    margin: 3px;
+    float: left;
+
+}
+
+img {
+    float: left;
+    margin: 10px;
+}
+
+.satu,
+.dua,
+.tiga {
+
+    width: 100px;
+    height: 100px;
+}
+
+.satu {
+    background-color: salmon;
+
+}
+
+.dua {
+    background-color: seagreen;
+    float: right;
+}
+
+.tiga {
+    background-color: black;
+
+}

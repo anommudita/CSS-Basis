@@ -1,0 +1,59 @@
+setiap tag pada HTML berada didalam sebuah kotak. properti display pada  CSS mengatur
+perilaku dari kotak tersebut;
+
+Pertemuan 1
+
+display memiliki 4 bagian
+1. Inline;
+    Element HTML yang secara default tidak menambahkan baris baru ketika dibuat;
+    lebar dan tinggi elemennya sebesar konten yang ada didalamnya
+    Kita tidak dapat mengantur tinggi dan lebar dari element inline
+    Margin dan padding hanya mempengaruhi element secara horizontal, tidak vertikal
+
+    *Element Inline
+        b, strong, i, em, a, span, sub, sup, button, input, label, select, textarea, ...
+
+   - inline barisnya kesamping sedangkan block arah ke bawah;
+   - jika displaynya inline maka sebesar kontennya dan tidak bisa diatur lagi;
+   - Cuma imagenya saja yang bisa kita atur ukuranya walaupun display bertipe inline; 
+
+2. inline-block;
+    Tidak ada element yang secara default memiliki properti display : inline-block;
+    kita harus ubah secara manual properti tersebut 
+    prilaku dasar sama dengan elemen inline;
+
+3. block;
+  -  Element HTML yang secara default menambahkan baris baru ketika dibuat 
+  -  jika tidak diatur lebarnya, maka lebar default dari element block akan memenuhi lebar
+     dari browser / parent-nya;
+  -  Kita dapat mengatur tinggi dan lebar dari elemen block 
+  -  Didalam elemen block, kita dapat menyimpan tag dengan elemen inline, inline-block, atau
+    bahkan element block lagi.
+
+    *Element block
+    h1-h6, p, ol, ul, li, form, hr, div,...
+
+4. none;
+  - Digunakan untuk meghilangkan sebuah elemen
+
+
+5.Mengubah display dari nilai defaultnya;
+      .navigasi li{
+            display: inline;
+        }
+
+Pertemuan 2 
+Dimensi & Overflow
+
+Dimensi cuma ada width & weigth;
+Satuannya memiliki : 
+1. px ==> absolute , nilainya pasti
+2. %  ==> relative , nilainya relative terhadap nilai parentnya atau pembungkusnya
+3, in, cm, mm, pt, pc ==> nilai di ambil di kehidupan nyata
+
+Overflow memiliki 4 value : 
+1. visible : elemen default, misal ada konten keluar dari parent maka diperlihatkan 
+2. auto : CSS akan menambah srcoll jika konten sudah penuh atau melewati konten;
+3. hidden : Konten akan disembuyikan, jika sudah melewati konten, maka yang tidak terkena konten akan dihapus;
+4. scroll : seperti auto, tetapi jika konten tidak keluar dari konten makan scroll tetap ditampilkan;
+

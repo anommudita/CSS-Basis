@@ -1,0 +1,257 @@
+setiap tag pada HTML berada didalam sebuah kotak. properti display pada  CSS mengatur
+perilaku dari kotak tersebut;
+
+Pertemuan 1
+
+display memiliki 4 bagian
+1. Inline;
+    Element HTML yang secara default tidak menambahkan baris baru ketika dibuat;
+    lebar dan tinggi elemennya sebesar konten yang ada didalamnya
+    Kita tidak dapat mengantur tinggi dan lebar dari element inline
+    Margin dan padding hanya mempengaruhi element secara horizontal, tidak vertikal
+
+    *Element Inline
+        b, strong, i, em, a, span, sub, sup, button, input, label, select, textarea, ...
+
+   - inline barisnya kesamping sedangkan block arah ke bawah;
+   - jika displaynya inline maka sebesar kontennya dan tidak bisa diatur lagi;
+   - Cuma imagenya saja yang bisa kita atur ukuranya walaupun display bertipe inline; 
+
+2. inline-block;
+    Tidak ada element yang secara default memiliki properti display : inline-block;
+    kita harus ubah secara manual properti tersebut 
+    prilaku dasar sama dengan elemen inline;
+
+3. block;
+  -  Element HTML yang secara default menambahkan baris baru ketika dibuat 
+  -  jika tidak diatur lebarnya, maka lebar default dari element block akan memenuhi lebar
+     dari browser / parent-nya;
+  -  Kita dapat mengatur tinggi dan lebar dari elemen block 
+  -  Didalam elemen block, kita dapat menyimpan tag dengan elemen inline, inline-block, atau
+    bahkan element block lagi.
+
+    *Element block
+    h1-h6, p, ol, ul, li, form, hr, div,...
+
+4. none;
+  - Digunakan untuk meghilangkan sebuah elemen
+
+
+5.Mengubah display dari nilai defaultnya;
+      .navigasi li{
+            display: inline;
+        }
+
+Pertemuan 2 
+Dimensi & Overflow
+
+
+Jika ingin menambahkan element pada content sebaiknya kita hanya mengatur lebarnya saja(widht), jika menambahkan
+tinggi(height) content akan keluar dari elemen tersebut, karna tinggi akan bertambah sesuai isi content.
+
+Dimensi cuma ada width & weigth;
+Satuannya memiliki : 
+1. px ==> absolute , nilainya pasti
+2. %  ==> relative , nilainya relative terhadap nilai parentnya atau pembungkusnya
+3, in, cm, mm, pt, pc ==> nilai di ambil di kehidupan nyata
+
+Overflow memiliki 4 value : 
+1. visible : elemen default, misal ada konten keluar dari parent maka diperlihatkan 
+2. auto : CSS akan menambah srcoll jika konten sudah penuh atau melewati konten;
+3. hidden : Konten akan disembuyikan, jika sudah melewati konten, maka yang tidak terkena konten akan dihapus;
+4. scroll : seperti auto, tetapi jika konten tidak keluar dari konten makan scroll tetap ditampilkan;
+
+Pertemuan 3
+Box Model;
+
+- Setiap elemen di halaman berada di dalam sebuah box(kotak)
+- Kita bisa mengatur ukuran dan posisi kotak tersebut
+- Kita bisa memberi warna/gambar sebagai background kotak tersebut;
+
+*CSS box model mendefinisikan 'kotak' yang dihasilkan oleh sebuah elemen, lalu menampilkan sesuai
+ dengan format visualnya (diisi dengan warna, gambar, ukuranya berapa);
+
+*CSS Box Model terdiri dari :
+1. margin : area transparan di sekitar kotak(diluar border)
+2. border : area transparan didalam kotak (antara conntent dan border)
+3. padding : batas disekelilingi content dan padding
+4. content : konten sebenarnya didalam box, bisa berupa teks atau gambar
+
+*properti untuk margin, paddding, & border;
+margin-top      padding-top       border-top
+margin-right    padding-right     border-right
+margin-left     padding-left      border-left
+margin-bottom   paddin-bottom     border-bottom
+margin          padding           border
+
+Pertemuan 4
+Margin 
+1. cara pakainya
+    margin-left: 100px;
+    margin-top: 30px;
+    margin-bottom: 150px;
+    margin-right: 50px;
+
+
+2. overlapping margin = 2 margin saling bertemu
+  *vertikal
+  -  margin itu tidak saling menambahkan, khusus yang vertikal(keatas)
+      akan mencari nilai terbesar saja;
+  *horizontal
+  -margin akan bertambah jika saling bertemu, khusus yang horizontal(kesamping)
+3. negatif margin 
+    - bisa berlawan arah, jika menggunakan negatif margin apa yang didekatnya dengan 
+    elemennya akan ikut terangkat juga;
+
+
+4. auto (khusus margin kanan dan kiri)
+  harus keduanya disi supaya mendapat efek tersebut, supyua dicenter
+    margin-left: auto;
+    margin-right: auto;
+
+
+5. shorthand = bagaimana cara mesingkat sintak menggunakan margin;
+  cara penulisan
+  margin : 10px 20px 30px 40px ( urutan sesuai arah jarum jam; atas,kanan,bawah,kiri)
+  margin : 50px; (semua sisi akan menjadi  50px marginya)
+  margin : 50px auto 50px (untuk yang ditengah itu kanan dan kiri marginnya jadi satu)
+  margin : 80px auto(atas bawah 80px , kiri kanan auto)
+
+Pertemuan 5
+
+
+
+Pertemuan 6 
+
+CSS Reset
+
+Dihtml padding,border,margin sudah memeliki nilai default, untuk menhapus nilai default tersebut kita bisa menggunkan CSS reset;
+
+Pertemuan 7
+
+*Create simple website
+
+Pertemuan 8
+*FLOAT
+Float  adalah properti pada CSS untuk mengatur posisi sebuah element. Sebuah element dapat dipaksa untuk berada sebelah kiri atau kanan dari 
+parent / pembungkusnya dengan menggunakan properti ini.
+
+*Value Float 
+1. None : nilai default
+2. left : elemen ada pada kiri
+3. Right : elemernt ada pada kanan
+
+Ada 2 prilaku pada saat membuat CSS
+Normal Flow(inline,inline-blok, block,none) VS Out-of Flow(float)
+
+*ketika kita memberikan properti float : left;
+nilai tersebut akan keluar dari nilai normalnya, kontak yang dibawahnya(kotak 3) akan ditimpa atau belakangnya dengan kontak dibuat
+karena kita mengisi properti float : left; dikotak 2.
+
+*kenapa div nya runtuh atau collapse, karena ketika kotak sudah keluar dari flow
+
+Yang bisa dilakuakan menggunakan properti float;
+
+1. Text Wrapping
+  Membuat Teks mengelilingi gambar / elemen lainnya
+
+2. Image gallery
+  membuat serangkaian gambar menjadi galeri
+
+3. Multi-Columm Layout
+  Membuat halaman memiliki beberapa kolom
+
+4.DLL
+
+
+Pertemuan 9 
+*Clear : Berfungasi menghentikan / membersihkan float;
+
+value nya 
+1. left = membesihkan float left
+2. right = membersihkan float right
+3. both = membersihkan float keduanya (left dan right)
+
+Cara menghentikan / membersihkan float 
+- menggunakan property Overflow
+  overflow : auto; artinya containernya akan menyesuaikan tinggi kontentnya, gambarnya akan masuk ke 
+  container, itu cuma mengakalinya saja;
+- menggunakan <div> kosong
+  Buat div kosong untuk membersihkan floatnya, sesuaikan alokasi div kosongnya
+  supaya membersihkan float, ingat setelah element atau bagian akhir taruh div kosongnya;;
+  dengan mengggunakan div kosong ini membuat codingan kita tidak rapi;
+- menggunakan teknik micro clearfix;
+  menggunakan script, tinggal menaruh class cf di element yang akan 
+  memberhentikan float;
+
+
+Pertemuan 10
+membuat website dengan menambahkan fitur text wrapping menggunakan float;
+
+Pertemuan 11
+*Position : Static and Relative;
+
+Position : dimana kita menggeserakan elementnya dan elemen tersebut tidak terpengaruh dengan element disekitarnya;
+
+Propertinya = Position
+value nya : 
+1.Static, jika tidak mengisi nilai pada Position makan nilai defaultnya adalah static;
+
+no-static;
+2.Relative(melayang) : jika kita menggesernya maka elemen yang ditempati oleh tersebut masih ada, relative dengan posisi semulanya;
+properti untuk relativeeeeeee : (top, botton, top, rigth);
+3.absolute
+4.fixed(iklan/navbar)
+
+
+pertemuan 12 
+*Position : absolute and fixed
+
+absolute :
+ 1.Ketika kita menggerakan elemen dengan posisi absolute(menggunakan properti top,left,bottom dan right) 
+   ,ruang yang ditempati oleh elemen tersebut dianggap tidak ada;
+ 2.Ketika kita menggerakan elemen dengan posisi absolute, elemen akan bergerak relatif terhadap posisi dari parent-nya,
+    selama element parent-nya memiliki posisi yang juga non-static, mencari parent terdekat dan non static
+    jika menggunakan absolute, cek juga parent nya dengan menggunakan relative
+
+fixed(iklan/navbar) :
+1. ketika kita menggerakan dengan properti top,bottom,left,right element tersebut selalu bergerak relative dengan windows 
+   browser ini, fixed ini tidak memperdulikan element parent-nya walau position non static;
+2. elemet dengan Position : fixed akan mengunci element tersebut, akan terkunci mengikuti scroll
+
+ .kotak{
+        height: 50px;
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity : 0.7; ===> untuk transparan
+    }
+
+      seolah" ditarik dari ujung ke ujung tanpa menggunakan dimensi width ;
+
+
+  .close{
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border: 3px solid black ;
+        border-radius: 50%;
+        position: absolute;
+        top : -15px;
+        right : -15px;
+    }
+
+
+Pertemuan 13 Z-index;
+z-index : untuk mengatur tumpukan element berlaku untuk element non-static (relative, absolute, fixed) 
+properti : z-index 
+value : angka, semakin besar angka, maka element tersebut layernya ke depan sebaliknya seperti itu;
+        9999 paling depan
+        -9999 paling belakang
+
+Pertemuan 14 
+Membuat website dengan menggunakan position no_static 
+
+
