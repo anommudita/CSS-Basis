@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Alignment</title>
+    <style>
+    *{
+        padding :0;
+        margin: 0;
+    }
+
+    .container{
+        /* background-color: black; */
+        
+        width: 80%;
+        height: 80%;
+        margin:50px auto;
+        display:grid;
+        grid-template-rows: [baris1] 100px [baris2] 100px [baris3] 100px [baris4]; 
+        grid-template-columns: [kolom1] minmax(200px, 300px) [kolom2] 1fr [kolom3] 1fr [kolom4];
+        /* gap:5px; */
+        /* justify-items: center; */
+        
+        /* place-content: space-evenly space-between ; */
+        /* justify-content: center;]
+        align-content: center; */ 
+        /* justify-content: end;
+        align-content: ; */
+        
+        /* place-content: center; */
+        /* justify-content: ; */
+
+
+    }
+
+    .items{
+        /* background-color: lightblue; */
+        /* border:3px solid black; */
+        /* height: 100px;
+        width: 100px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start:2;
+        grid-row-end:4; */
+        
+    }
+
+    .items.i1, .items.i4, .items.i7{
+        /* height: 50px; */
+    }
+
+    .items.i8, .items.i2, .items.i5{
+        /* width: 80px; */
+    }
+    .items.i3, .items.i6, .items.i9{
+        /* width: 80px; */
+    }
+    
+    .my-item{
+        /* grid-column-start: -1;
+        grid-column-end: -2;
+        grid-row-start:1;
+        grid-row-end:4; */
+
+        /* grid-column-start:1;
+        grid-column-end: span 3;
+        grid-row-start: 1;
+        grid-row-end: span 2; */
+        background-color: lightblue;
+        place-self: start end;
+        /* grid-column: 1 / 3;
+        grid-row:1/2 ; */
+        /* grid-area: 1 / 1 / 3 /4; */
+    }
+
+    </style>
+</head>
+<body>
+    <class class="container">
+     <div class="items my-item">1</div>
+     <div class="items">3</div>
+     <div class="items">2</div>
+     <div class="items">4</div>
+     <div class="items">5</div>
+     <div class="items">6</div>
+     <!-- <div class="items i7">7</div>
+     <div class="items i8">8</div>
+     <div class="items i9">9</div> -->
+    </class>
+</body>
+</html>

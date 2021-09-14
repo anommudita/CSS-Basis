@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS_Grid/style1.css">
+
+    <style>
+        .container{
+
+            display:grid;
+            width: 60%;
+            border: 5px solid black;
+            margin: 50px auto;
+            grid-template-columns: 1fr minmax(200px, 300px) 1fr;
+            /* grid-template-rows: [baris1] 50px [baris2] 50px [baris] 50px; */
+            /* grid-auto-columns: 20px;
+            grid-auto-flow: column; */ 
+        }
+
+        .items{
+        
+            background-color: rgb(148, 148, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .items:nth-child(even){
+            background-color:rgba(255, 72, 109, 0.884);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+<!-- menggunakan float dan flex -->
+    <!-- <div class="container">
+        <header>header</header>
+        <div class="content">
+            <div class="sidebar">
+                <aside>aside</aside>
+                <nav>nav</nav>
+            </div>
+        <main>Main</main>
+        </div>
+        <footer>footer</footer>
+    </div> -->
+
+<!-- menggunakan Css grid -->
+<!-- <div class="container">
+    <header>header</header>
+    <aside>aside</aside>
+    <nav>nav</nav>
+    <main>main</main>
+    <footer>footer</footer>
+</div> -->
+
+<!-- test properti grid pada container-->
+<div class="container">
+    <div class="items">Anom</div>
+    <div class="items">2</div>
+    <div class="items">Mudita</div>
+    <!-- <div class="items">4</div>
+    <div class="items">5</div>
+    <div class="items">6</div>
+    <div class="items">7</div>
+    <div class="items">8</div>
+    <div class="items">9</div> -->
+</div>
+
+
+
+</body>
+</html>

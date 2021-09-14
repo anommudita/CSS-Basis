@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* ngumpetin navbar mobile jelas sudah ada di bagian kanan */
+    overflow-x: hidden;
+
+}
+
+
+/* navbar */
+
+nav {
+    display: flex;
+    background-color: rgb(180, 78, 232);
+    justify-content: space-around;
+    /* padding: 20px 0; */
+    color: rgb(234, 223, 240);
+    height: 50px;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    /* list titik pada li sudah dihilangkan fungsi dari list-style: ; */
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+
+nav ul a {
+    color: rgb(234, 223, 240);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav .logo {
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
+}
+
+
+
+/* Humburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -6px;
+    top: -3px;
+    opacity: 0;
+    /* supaya ada aksi itu tombol bisa diklik */
+    cursor: pointer;
+    z-index: 11;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(234, 223, 240);
+    border-radius: 3px;
+
+    /* animasi */
+    transition: all 0.5s;
+}
+
+
+
+/* Hamburger Menu Animasi */
+/* memanggil element tanpa menggunakan class */
+.menu-toggle span:nth-child(2) {
+    /* menentukan porosnya X Y*/
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 0;
+}
+
+/* jika diclik */
+.menu-toggle input:checked~span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0px);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    /* mengecilkan sampai hilang */
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+
+/* Responsive Breakpoint*/
+
+/* ukuran tablet = 768px */
+@media screen and (max-width: 768px) {
+
+    nav ul {
+        width: 50%;
+    }
+}
+
+
+/* Ukuran Mobile 576px */
+@media screen and (max-width:576px) {
+
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        /* vh = view port height, tinggi layar yang kita lihat*/
+        height: 100vh;
+        background-color: rgb(180, 78, 232);
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        /* ngumpetin navbar mobile */
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* jika ada ada kelas slide maka muncul navbar mobile yang diumpetin itu*/
+    nav ul.slide {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
